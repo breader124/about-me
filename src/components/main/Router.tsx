@@ -1,20 +1,7 @@
-import {RouterProps} from "./RouterProps";
-import About from "../subpage/About";
-import Introduction from "../subpage/Introduction";
-import EmploymentHistory from "../subpage/EmploymentHistory";
-import Articles from "../subpage/Articles";
+import RouterProps from "./RouterProps";
 
 export const Router = (props: RouterProps) => {
-    switch (props.subpage) {
-        case "0": return <Introduction/>
-        case "1": return <EmploymentHistory/>
-        case "2": return <Articles/>
-        case "3": return <About/>
-    }
-
-    return (
-        <>Impossible</>
-    )
+    return props.navigationSpec.get(props.subpage)!.getComponent();
 }
 
 export default Router;

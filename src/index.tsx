@@ -4,6 +4,10 @@ import './index.css';
 import reportWebVitals from './reportWebVitals';
 import App from "./App";
 
+// polyfills
+import "core-js/stable";
+import "regenerator-runtime/runtime";
+
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );

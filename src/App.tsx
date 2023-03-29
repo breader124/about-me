@@ -13,43 +13,50 @@ import {
     Navbar,
     Text
 } from "@mantine/core";
+import {Article, InfoCircle, Man, Moon, Network, Sun} from "tabler-icons-react";
+import NavigationBundle from "./components/navigation/NavigationBundle";
+import Name from "./components/utils/Name";
+import Introduction from "./components/subpage/Introduction";
+import EmploymentHistory from "./components/subpage/EmploymentHistory";
+import Articles from "./components/subpage/Articles";
+import About from "./components/subpage/About";
 import Navigation from "./components/navigation/Navigation";
 import Router from "./components/main/Router";
-import {
-    Article,
-    InfoCircle,
-    LetterA,
-    LetterB,
-    LetterC,
-    LetterD,
-    LetterE,
-    LetterH,
-    LetterI,
-    LetterL,
-    LetterN,
-    LetterO,
-    LetterR,
-    LetterS,
-    LetterZ,
-    Man,
-    Moon,
-    Network,
-    Sun
-} from "tabler-icons-react";
 
-const navSections = new Map<string, string>([
-    ["0", "Introduction"],
-    ["1", "Employment history"],
-    ["2", "Articles"],
-    ["3", "About this page"]
+const navSections = new Map<string, NavigationBundle>([
+    [
+        "0",
+        {
+            sectionName: "Introduction",
+            getComponent: () => <Introduction/>,
+            getIcon: () => <Man/>
+        }
+    ],
+    [
+        "1",
+        {
+            sectionName: "Employment history",
+            getComponent: () => <EmploymentHistory/>,
+            getIcon: () => <Network/>
+        }
+    ],
+    [
+        "2",
+        {
+            sectionName: "Articles",
+            getComponent: () => <Articles/>,
+            getIcon: () => <Article/>
+        }
+    ],
+    [
+        "3",
+        {
+            sectionName: "About this page",
+            getComponent: () => <About/>,
+            getIcon: () => <InfoCircle/>
+        }
+    ]
 ]);
-
-const navIcons = new Map<string, () => JSX.Element>([
-    ["0", () => <Man/>],
-    ["1", () => <Network/>],
-    ["2", () => <Article/>],
-    ["3", () => <InfoCircle/>]
-])
 
 export const App = () => {
     const [colorScheme, setColorScheme] = useState<ColorScheme>('dark');
@@ -64,27 +71,9 @@ export const App = () => {
                     header={
                         <Header height={50}>
                             <Group sx={{height: '100%'}} px={20} position="apart">
-                                <Group sx={{height: '100%'}} spacing="xl">
-                                    <Group sx={{height: '100%'}} spacing="0">
-                                        <LetterA size={36}/>
-                                        <LetterD size={36}/>
-                                        <LetterR size={36}/>
-                                        <LetterI size={36}/>
-                                        <LetterA size={36}/>
-                                        <LetterN size={36}/>
-                                    </Group>
-                                    <Group sx={{height: '100%'}} spacing="0">
-                                        <LetterC size={36}/>
-                                        <LetterH size={36}/>
-                                        <LetterL size={36}/>
-                                        <LetterE size={36}/>
-                                        <LetterB size={36}/>
-                                        <LetterO size={36}/>
-                                        <LetterS size={36}/>
-                                        <LetterZ size={36}/>
-                                    </Group>
-                                </Group>
-                                <ActionIcon variant="default" onClick={() => toggleColorScheme()} size={30}>
+                                <Name/>
+                                <ActionIcon variant="default" title={"Change theme"} onClick={() => toggleColorScheme()}
+                                            size={30}>
                                     {colorScheme === 'dark' ? <Sun size="1rem"/> : <Moon size="1rem"/>}
                                 </ActionIcon>
                             </Group>
@@ -92,7 +81,7 @@ export const App = () => {
                     }
                     navbar={
                         <Navbar width={{base: "20%"}} height={"100vw"} p={"lg"}>
-                            <Navigation sections={navSections} icons={navIcons} chooseSection={chooseSubpage}/>
+                            <Navigation sections={navSections} chooseSection={chooseSubpage}/>
                         </Navbar>
                     }
                     footer={
@@ -106,7 +95,7 @@ export const App = () => {
                     }
                 >
                     <Container maw={"100%"}>
-                        <Router subpage={chosenSubpage}/>
+                        <Router subpage={chosenSubpage} navigationSpec={navSections}/>
                     </Container>
                 </AppShell>
             </MantineProvider>

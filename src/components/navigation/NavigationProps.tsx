@@ -1,5 +1,6 @@
-export interface NavigationProps {
-    sections: Map<string, string>,
-    icons: Map<string, () => JSX.Element>
+import NavigationBundle from "./NavigationBundle";
+
+export default interface NavigationProps {
+    sections: Map<string, NavigationBundle>,
     chooseSection: (option: string) => void
 }

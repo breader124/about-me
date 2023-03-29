@@ -53,7 +53,7 @@ export const Articles = () => {
             <td>{element.publishedOn}</td>
             <td>
                 <Stack spacing={"xs"}>
-                    {element.tags.map(t => <Badge>{t}</Badge>)}
+                    {element.tags.map(t => <Badge key={t}>{t}</Badge>)}
                 </Stack>
             </td>
         </tr>
