@@ -24,7 +24,7 @@ const elements = [
     {
         what: "Poza (X)HTML i CSS serwis powinien wykorzystywać co najmniej jedną wybraną technologię spośród przedstawionych na wykładzie (np. skrypty po stronie serwera i/lub klienta, ciasteczka, bazy danych, web serwisy, SSL... - do wyboru)",
         isSuccessful: "Tak",
-        why: "Strona jest hostowana z bucketa AWS S3. Oznacza to, że korzysta ona z szyfrowania komunikacji z wykorzystaniem algorytmu TLS."
+        why: "Strona jest hostowana z bucketa AWS S3. Dodatkowo, została ona wystawiona za pośrednictwem CDNa w postaci AWS CloudFront. Bucket S3 został skonfigurowany tak, aby uniemożliwić dostanie się do jakiegokolwiek obiektu inaczej niż przez CDNa. CloudFront z kolei umożliwia przeglądanie strony za pośrednictwem HTTPS. Podczas prób wejścia na stronę z protokołem HTTP, użytkownik jest przekierowywany tak, aby ostatecznie korzystał z protokołu HTTPS."
     },
     {
         what: "Serwis powinien zawierać dobrze przemyślany, wygodny i spójny system nawigacji. Co więcej, serwis powinien być na tyle duży, aby ten system miał sens – przypominamy o możliwości posiłkowania się wszelkiego rodzaju „materiałem zastępczym”.",
@@ -57,6 +57,7 @@ export const About = () => {
                 <List.Item>Biblioteka komponentów wizualnych: Mantine 6</List.Item>
                 <List.Item>Zapewnienie wsparcia dla starszych przeglądarek (polyfills): core-js</List.Item>
                 <List.Item>Hosting: Bucket AWS S3</List.Item>
+                <List.Item>CDN: Dystrybucja AWS CloudFront</List.Item>
             </List>
             <Divider my="md" label="Założenia poczynione podczas projektowania nawigacji" labelPosition="center"/>
             <Text>
