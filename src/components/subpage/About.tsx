@@ -4,7 +4,7 @@ const elements = [
     {
         what: "Serwis może być zrealizowany na bazie HTML 4.01 lub XHTML (dopuszczalne jest też użycie XML+XSLT). Strony muszą być utworzone poprawnie i mieć poprawne deklaracje typu – będą przepuszczane przez walidator w ramach testu.",
         isSuccessful: "Tak",
-        why: "Serwis został zrealizowany na bazie HTML 5, zgodnie z odpowiedzią prowadzącego na Forum Dyskusyjnym, z której wynikało, że można (a nawet należy) stosowac ten standard. Wygenerowany HTML pomyślnie przeszedł test wykonany za pomocą walidatora."
+        why: "Serwis został zrealizowany na bazie HTML 5, zgodnie z odpowiedzią prowadzącego na Forum Dyskusyjnym, z której wynikało, że można (a nawet należy) stosować ten standard. Wygenerowany HTML pomyślnie przeszedł test wykonany za pomocą walidatora."
     },
     {
         what: "Wymagane jest nietrywialne formatowanie przy użyciu CSS. Poprawność reguł CSS również będzie sprawdzana walidatorem.",
@@ -14,11 +14,11 @@ const elements = [
     {
         what: "Kompatybilność i „łagodna degradacja” - serwis powinien funkcjonować poprawnie i wyglądać dobrze we wszystkich popularnych przeglądarkach (najnowsze wersje), a korzystanie z serwisu powinno być też możliwe – choć zapewne nie bez zakłóceń w rodzaju nieudanego formatowania – w przeglądarkach starszych lub bardziej prymitywnych pod względem możliwości prezentacyjnych (np. lynx). W przypadku podjęcia decyzji o użyciu XHTML 1.1 wystarczy obsługa przez przeglądarki respektujące ten standard.",
         isSuccessful: "Tak",
-        why: "Biblioteka Mantine zapewnia, że komponenty będą wyglądac dobrze na wszystkich nowych wersjach najpopularniejszych bibliotek. W celu zapewnienia wsparcia zainstalowany oraz zaimportowane zostało rozwiązanie polyfill w postaci biblioteki core-js. Oddaje ona zachowanie funkcjonalności wprowadzonych w późniejszych wersjach JSa i Reacta także w starszych przeglądarkach, które zostały wydane wcześniej."
+        why: "Biblioteka Mantine zapewnia, że komponenty będą wyglądać dobrze na wszystkich nowych wersjach najpopularniejszych przegląderek. W celu zapewnienia wsparcia dla tych starszych zainstalowane oraz zaimportowane zostało rozwiązanie polyfill w postaci biblioteki core-js. Rozwiązanie to dostarcza implementacje funkcji dostępnych w nowszych wersjach JSa i Reacta też starszym przeglądarkom, które tych funkcjonalności same z siebie nie posiadają."
     },
     {
         what: "Dostępność dla niepełnosprawnych – w szczególności powinna być możliwa nawigacja przy użyciu oprogramowania czytającego (a zatem wszystkie istotne obrazki powinny mieć teksty alternatywne, itp.). Oczywiście biorąc pod uwagę skalę projektu nie możemy przesadzać z rozmachem – np. nie jest wymagane dostarczenie reguł CSS dla medium aural.",
-        isSuccessful: "Yes",
+        isSuccessful: "Tak",
         why: "Strona została przetestowana z wykorzystaniem rozwiązania Lighthouse. Wynik dla dostępności osiągnął 100/100 punktów."
     },
     {
@@ -29,12 +29,12 @@ const elements = [
     {
         what: "Serwis powinien zawierać dobrze przemyślany, wygodny i spójny system nawigacji. Co więcej, serwis powinien być na tyle duży, aby ten system miał sens – przypominamy o możliwości posiłkowania się wszelkiego rodzaju „materiałem zastępczym”.",
         isSuccessful: "Tak",
-        why: "Strona została zaprojektowana z kilkoma podstronami dotyczącymi różnych aspektów. Na podstronie dotyczącej dotychczasowego przebiegu kariery występuje wspomniany w poleceniu 'materiał pomocniczy' w postaci tekstu Lorem Ipsum"
+        why: "Strona została zaprojektowana z kilkoma podstronami dotyczącymi różnych aspektów. Na podstronie dotyczącej dotychczasowego przebiegu kariery występuje wspomniany w poleceniu 'materiał pomocniczy' w postaci tekstu Lorem Ipsum."
     },
     {
         what: "Przypominamy, że projektowany jest serwis internetowy, a więc strona, z której teoretycznie ktoś miałby korzystać. Nieczytelne zestawienia kolorów, mikroskopijne czcionki, migające irytująco obrazki itp. nie powinny występować – prosimy utworzyć stronę, która nie tyle próbuje pochwycić uwagę gościa (choć to pożądane), ile zaoferować mu wygodny dostęp do poszukiwanych treści./lub klienta, ciasteczka, bazy danych, web serwisy, SSL... - do wyboru)",
         isSuccessful: "Tak",
-        why: "W kwestii projektu główny nacisk został postawiony na prostotę i spójne zaprezentowanie niezbędnych informacji. W kontekście opcjonalnych, graficznych funkcjonalności, użytkownikom został udostępniony zarówno ciemny, jak i jasny tryb strony. Można je swobodnie zmieniac korzystając z przycisku w prawym, górnym rogu ekranu."
+        why: "W kwestii projektu główny nacisk został postawiony na prostotę i spójne zaprezentowanie niezbędnych informacji. W kontekście opcjonalnych, graficznych funkcjonalności, użytkownikom został udostępniony zarówno ciemny, jak i jasny tryb strony. Można je swobodnie zmieniać korzystając z przycisku w prawym, górnym rogu ekranu."
     }
 ];
 
